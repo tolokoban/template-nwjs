@@ -9,8 +9,8 @@ const Chalk = require("chalk")
 async function start() {
     try {
         const { url, path } = Params.parse()
-        await Update.applyIfExists(path)
         await Remote.execFullDownloadIfNeeded(path, url)
+        await Update.applyIfExists(path)
         Webkit.exec(path)
         const remote = await Remote.create(path, url)
         if (!remote) return

@@ -125,7 +125,8 @@ export default {
 }
 
 /**
- * If there is no "package.txt" in local path, then we need to download everythink.
+ * If there is no "package.txt" in local path, or if it is empty,
+ * then we need to download everythink.
  */
 async function execFullDownloadIfNeeded(path: string, url: string) {
     console.log(Chalk.bold.cyan("Full download..."))
